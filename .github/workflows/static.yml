@@ -41,3 +41,10 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v2
+      - name: Deploy to external
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+          external_repository: vijexa/ghpagestest-target
+          publish_branch: gh-pages  # default: gh-pages
+          publish_dir: .
